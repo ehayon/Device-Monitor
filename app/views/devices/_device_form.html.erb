@@ -1,0 +1,33 @@
+<%= form_for @device do |f| %>
+	<% if @device.errors.any? %>
+	  <div id="errorExplanation">
+		<h2><%= pluralize(@device.errors.count, "error") %> prohibited this from being saved:</h2>
+		<ul>
+		<% @device.errors.full_messages.each do |msg| %>
+		  <li><%= msg %></li>
+		<% end %>
+		</ul>
+	  </div>
+   	<% end %>
+  <div class="field">
+  	<%= f.label :name %><br />
+  	<%= f.text_field :name %>
+  </div>
+  <div class="field">
+  	<%= f.label :description %><br />
+  	<%= f.text_area :description %>
+  </div>
+  <div class="field">
+  	<%= f.label :ip %><br />
+  	<%= f.text_field :ip %>
+  </div>
+  <div class="field">
+  	<%= f.label :port %><br />
+  	<%= f.text_field :port %>
+  </div>
+  <div class="field">
+  	<%= f.label :folder_id, "Folder" %>
+	<%= f.select( :folder_id, options_from_collection_for_select(@folders, 'id', 'name') ) %>
+  </div>
+  <%= submit_tag submit_text %>
+<% end %>

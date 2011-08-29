@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  ip: MyString
+  port: 1
+  last_checked: 2011-08-15 13:22:54
+  last_state: false
+  disabled: false
+  up_emails_sent: 1
+  down_emails_sent: 1
+  times_up: 1
+  times_down: 1
+  folder_id: 1
+
+two:
+  name: MyString
+  description: MyText
+  ip: MyString
+  port: 1
+  last_checked: 2011-08-15 13:22:54
+  last_state: false
+  disabled: false
+  up_emails_sent: 1
+  down_emails_sent: 1
+  times_up: 1
+  times_down: 1
+  folder_id: 1

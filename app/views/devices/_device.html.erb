@@ -1,0 +1,7 @@
+<div class="device">
+	<td><%= device.name %></td>
+	<td><%= device.ip %></td>
+	<td><%= device.port %></td>
+	<td><%= device.last_state %></td>
+	<td><%= ((device.times_up)/(device.times_down + device.times_up))*100 %></td>
+</div>

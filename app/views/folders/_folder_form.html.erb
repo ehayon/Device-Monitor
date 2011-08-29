@@ -1,0 +1,21 @@
+<%= form_for @folder do |f| %>
+	<% if @folder.errors.any? %>
+	  <div id="errorExplanation">
+		<h2><%= pluralize(@folder.errors.count, "error") %> prohibited this from being saved:</h2>
+		<ul>
+		<% @folder.errors.full_messages.each do |msg| %>
+		  <li><%= msg %></li>
+		<% end %>
+		</ul>
+	  </div>
+   	<% end %>
+  <div class="field">
+  	<%= f.label :name %><br />
+  	<%= f.text_field :name %>
+  </div>
+  <div class="field">
+  	<%= f.label :description %><br />
+  	<%= f.text_area :description %>
+  </div>
+  <%= submit_tag submit_text %>
+<% end %>

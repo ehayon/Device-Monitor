@@ -1,0 +1,58 @@
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /Users/ethanhayon/Sites/DeviceMonitor/vendor/plugins/rails_datatables/rails/init.rb. (called from <top (required)> at /Users/ethanhayon/Sites/DeviceMonitor/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/ethanhayon/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-29 14:26:53 -0400
+  Processing by DevicesController#index as HTML
+  [1m[36mDevice Load (37.8ms)[0m  [1mSELECT `devices`.* FROM `devices`[0m
+Rendered devices/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 146ms (Views: 9.0ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/devices/datatable?_=1314642413890" for 127.0.0.1 at 2011-08-29 14:26:53 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642413890"}
+  [1m[35mDevice Load (0.3ms)[0m  SELECT `devices`.* FROM `devices`
+Completed 200 OK in 23ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/devices/datatable?_=1314642418896" for 127.0.0.1 at 2011-08-29 14:26:58 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642418896"}
+  [1m[36mDevice Load (0.4ms)[0m  [1mSELECT `devices`.* FROM `devices`[0m
+Completed 200 OK in 25ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/devices/datatable?_=1314642423895" for 127.0.0.1 at 2011-08-29 14:27:03 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642423895"}
+  [1m[35mDevice Load (0.3ms)[0m  SELECT `devices`.* FROM `devices`
+Completed 200 OK in 23ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/devices/datatable?_=1314642428894" for 127.0.0.1 at 2011-08-29 14:27:08 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642428894"}
+  [1m[36mDevice Load (0.3ms)[0m  [1mSELECT `devices`.* FROM `devices`[0m
+Completed 200 OK in 22ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/devices/datatable?_=1314642433895" for 127.0.0.1 at 2011-08-29 14:27:13 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642433895"}
+  [1m[35mDevice Load (0.4ms)[0m  SELECT `devices`.* FROM `devices`
+Completed 200 OK in 43ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/devices/datatable?_=1314642438895" for 127.0.0.1 at 2011-08-29 14:27:18 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642438895"}
+  [1m[36mDevice Load (0.3ms)[0m  [1mSELECT `devices`.* FROM `devices`[0m
+Completed 200 OK in 23ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/devices/datatable?_=1314642443896" for 127.0.0.1 at 2011-08-29 14:27:23 -0400
+  Processing by DevicesController#datatable as JSON
+  Parameters: {"_"=>"1314642443896"}
+  [1m[35mDevice Load (0.3ms)[0m  SELECT `devices`.* FROM `devices`
+Completed 200 OK in 43ms (Views: 4.3ms | ActiveRecord: 0.3ms)

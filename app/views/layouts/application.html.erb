@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PulseServer</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag 'jquery', 'jquery.dataTables', 'application' %>
+  <%= csrf_meta_tag %>
+
+</head>
+<body>
+	<div id="header">
+		<div class="text"><p>Device Management Portal</p></div>
+		<div class="button_holder">
+			<%= link_to("Add Folder", new_folder_path, :class => "button") %>
+			<%= link_to("Add Device", new_device_path, :class => "button") %>
+			<%= link_to("All Devices", devices_path, :class => "button") %>
+		</div>
+	</div>
+
+	<% if notice %>
+		<div class="notice"><%= notice %></div>
+	<% end %>
+	<div id="content">
+		<%= yield %>
+	</div>	
+</body>
+</html>

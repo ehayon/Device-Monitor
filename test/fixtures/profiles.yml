@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  test_frequency: 1
+  send_emails: false
+  send_sms: false
+
+two:
+  name: MyString
+  description: MyText
+  test_frequency: 1
+  send_emails: false
+  send_sms: false
