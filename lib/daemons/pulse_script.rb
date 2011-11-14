@@ -22,7 +22,7 @@ def check_pulse(requests)
         curl.follow_location = true
         # curl.username = "user"
         # curl.password = "pass"
-        curl.timeout = 30
+        curl.timeout = 5
         curl.on_success {|easy| success(easy, item.id); }
         curl.on_failure {|easy| failure(easy, item.id); failures << item }
       end
@@ -39,7 +39,7 @@ def check_pulse(requests)
     c = Curl::Easy.new(url) do |curl|
       # curl.username = "user"
       # curl.password = "pass"
-      curl.timeout = 30
+      curl.timeout = 15
       curl.on_success { |easy| retry_success(easy, item.id); }
       curl.on_failure { |easy| retry_failure(easy, item.id); }
     end

@@ -23,7 +23,7 @@ while($running) do
     end
     check_pulse requests
   end
-  sleep 15
+  sleep 10
   
 end
 

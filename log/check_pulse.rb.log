@@ -55,3 +55,17 @@
 #<NoMethodError: undefined method `to_ary' for #<Device:0x007fdb02b5c838>>
 #<NoMethodError: undefined method `to_ary' for #<Device:0x007fdb02b5c838>>
 #<NoMethodError: undefined method `to_ary' for #<Device:0x007fdb02b5c838>>
+*** below you find the most recent exception thrown, this will be likely (but not certainly) the exception that made the application exit abnormally ***
+#<NameError: method `recognize' not defined in Rack::Mount::RouteSet>
+*** below you find all exception objects found in memory, some of them may have been thrown in your application, others may just be in memory because they are standard exceptions ***
+#<NoMemoryError: failed to allocate memory>
+#<SystemStackError: stack level too deep>
+#<fatal: exception reentered>
+#<Mysql2::Error: Unknown database 'pulseserver_production'>
+#<NameError: method `recognize' not defined in Rack::Mount::RouteSet>
+*** below you find the most recent exception thrown, this will be likely (but not certainly) the exception that made the application exit abnormally ***
+#<fatal: exception reentered>
+*** below you find all exception objects found in memory, some of them may have been thrown in your application, others may just be in memory because they are standard exceptions ***
+#<NoMemoryError: failed to allocate memory>
+#<SystemStackError: stack level too deep>
+#<fatal: exception reentered>

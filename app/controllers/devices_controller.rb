@@ -1,6 +1,11 @@
 class DevicesController < ApplicationController
   def index
     @devices = Device.all
+    
+    respond_to do |format|
+      format.html
+      format.json { render :json => @devices, :status => :ok }
+    end
   end
 
   def new
@@ -49,22 +54,5 @@ class DevicesController < ApplicationController
     redirect_to devices_path
   end
   
-  
-  def datatable
-    @devices = Device.all
-    respond_to do |format| 
-      format.json { render :json => generate_json(@devices) }
-    end
-  end 
-  
-  private 
-  def generate_json(objects)   
-    # generate the json used by datatables
-    data = []
-    objects.each do |object|
-      data << [object.name, object.ip, object.port.to_s, object.last_state.to_s, 'link']
-    end
-    { :sEcho => 1, :iTotalRecords => objects.count, :iTotalDisplayRecords => objects.count, :aaData => data}.to_json
-  end
 end
 

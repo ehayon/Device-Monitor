@@ -1,24 +1,22 @@
-<%= javascript_include_tag 'datatable_functions' %>
 <h1>Devices</h1><br />
-<table id='devices' class='datatable'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>IP Address</th>
-      <th>Port</th>
-      <th>State</th>
-	  <th>Actions</th>
+<table id='devices'>
+  <tr>
+    <th>Name</th>
+    <th>IP Address</th>
+    <th>Port</th>
+    <th>State</th>
+    <th>Last Checked</th>
+    <th>Actions</th>
+  </tr>
+  <% @devices.each do |device| %>
+    <tr id="<%= dom_id(device) %>">
+      <td class="name"><%= device.name %></td>
+      <td class="ip"><%= device.ip %></td>
+      <td class="port"><%= device.port %></td>
+  	  <td class="last_state"><%= device.last_state %></td>
+  	  <td class="last_checked"><%= device.last_checked %></td>
+      <td><%= link_to "Edit", edit_device_path(device) %></td>
     </tr>
-  </thead>
-  <tbody>
-    <% @devices.each do |device| %>
-      <tr id="<%= dom_id(device) %>">
-        <td><%= device.name %></td>
-        <td><%= device.ip %></td>
-        <td><%= device.port %></td>
-		<td><%= device.last_state %></td>
-        <td><%= link_to "Edit", edit_device_path(device) %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <% end %>
 </table>
+<div id="testbutton">I am a button!</div>
