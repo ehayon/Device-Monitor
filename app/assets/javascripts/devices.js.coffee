@@ -43,7 +43,6 @@ $(document).ready ->
         # Perform an AJAX request every second    
         setInterval(reload, 1000)
         
-
     
     
     
