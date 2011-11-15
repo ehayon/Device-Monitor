@@ -1,10 +1,11 @@
 class DevicesController < ApplicationController
   def index
     @devices = Device.all
-    
+    #json_response = @devices.as_json
+    json_response = { 'sort' => { 'by' => 'id', 'sort' => 'asc' }, 'devices' => @devices}
     respond_to do |format|
       format.html
-      format.json { render :json => @devices, :status => :ok }
+      format.json { render :json => json_response, :status => :ok }
     end
   end
 
