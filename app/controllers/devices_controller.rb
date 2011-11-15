@@ -29,6 +29,7 @@ class DevicesController < ApplicationController
   
   def show
     @device = Device.find(params[:id])
+    @uptime = (@device.times_up == 0 && @device.times_down == 0) ? 0 : (@device.times_up/(@device.times_up + @device.times_down))*100
   end
 
   def edit

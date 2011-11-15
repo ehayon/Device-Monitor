@@ -6,4 +6,4 @@
 <p>Last State: <%= @device.last_state %></p>
 <p>Last Checked: <%= (Time.now - @device.last_checked).round/60 %> minutes ago</p>
 <p># Times Up: <%= @device.times_up %></p>
-<p>% Uptime: <%= (@device.times_up/(@device.times_up + @device.times_down))*100 %>%</p>
+<p>% Uptime: <%= @uptime %></p>

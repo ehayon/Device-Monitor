@@ -75,3 +75,14 @@ body {
 table#devices tr th  {
   padding-right: 90px;
 }
+
+table#devices {
+  width: 100%;
+}
+.up {
+  background-color: rgba(0,204,0,0.1);
+}
+
+.down {
+  background-color: rgba(204,0,0,0.2);
+}

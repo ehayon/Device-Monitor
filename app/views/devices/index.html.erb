@@ -6,17 +6,16 @@
     <th>Port</th>
     <th>State</th>
     <th>Last Checked</th>
-    <th>Actions</th>
   </tr>
   <% @devices.each do |device| %>
-    <tr id="<%= dom_id(device) %>">
+    <tr id="<%= dom_id(device) %>" class="<%= device.last_state ? 'up' : 'down' %>">
       <td class="name"><%= device.name %></td>
       <td class="ip"><%= device.ip %></td>
       <td class="port"><%= device.port %></td>
   	  <td class="last_state"><%= device.last_state %></td>
   	  <td class="last_checked"><%= device.last_checked %></td>
-      <td><%= link_to "Edit", edit_device_path(device) %></td>
+  	  <td width="30"><%= link_to "Edit", edit_device_path(device) %></td>
     </tr>
   <% end %>
 </table>
-<div id="testbutton">I am a button!</div>
+<span id="device_page"></span>
