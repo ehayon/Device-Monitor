@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "pulse_script"
+require_relative "pulse_script"
 
 # You might want to change this
 ENV["RAILS_ENV"] ||= "production"
