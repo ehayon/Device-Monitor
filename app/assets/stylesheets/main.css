@@ -86,3 +86,27 @@ table#devices {
 .down {
   background-color: rgba(204,0,0,0.2);
 }
+#search_message {
+  display: none;
+  margin-left: 15px;
+  background-color: rgba(255,0,0,.5);
+  padding: 3px;
+  color: #222;
+  border-radius: 3px;
+}
+#search_message #remove {
+  font-weight: bold;
+  font-size: 10px;
+  margin-left: 10px;
+  color: #1a0a0a;
+  background-color: rgba(230,0,0,0.6);
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 8px;
+}
+#search_message #remove:hover {
+  background-color: rgba(255,0,0,.4);
+  cursor: pointer;
+}

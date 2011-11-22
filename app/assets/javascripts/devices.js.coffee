@@ -8,9 +8,19 @@ $(document).ready ->
             sort_by = 'id'
             sort_dir = $(this).val()
             reload()
-        $('#search').keyup ->
-            keyword = $('#search').val()
+        $('#search_field').keyup ->
+            keyword = $('#search_field').val()
+            $('#search_message').html("Showing results for \"" + keyword + "\"").append('<span id="remove">X</span>')
+            if keyword == '' 
+                $('#search #search_message').hide()
+            else
+                $('#search #search_message').show()
             reload()
+        $('#search_message').delegate('#remove', 'click', ->
+            $('#search_message').hide()
+            keyword = ''
+            reload()
+        )
         reload = ->
             update_elements = ["name", "ip", "port", "last_state", "last_checked"]
             $.ajax
