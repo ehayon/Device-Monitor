@@ -18,7 +18,7 @@ def check_pulse(requests)
    
     queue.each do |item|
       url = "http://#{item.ip}:#{item.port}"
-      c = Curl::Easy.new(url) do|curl|
+      c = Curl::Easy.new(url) do |curl|
         curl.follow_location = true
         # curl.username = "user"
         # curl.password = "pass"
