@@ -1,8 +1,9 @@
 class DevicesController < ApplicationController
   def index
-    @devices = Device.all
-    #json_response = @devices.as_json
-    json_response = { 'sort' => { 'by' => 'id', 'sort' => 'asc' }, 'devices' => @devices}
+    params[:sort] ||= {'by'=>'id', 'dir'=>'asc'}
+    params[:search] ||= ""
+    @devices = Device.where('name LIKE ?', '%'+params[:search]+'%').order("#{params[:sort][:by]} #{params[:sort][:dir]}")
+    json_response = { 'sort' => { 'by' => 'id', 'dir' => 'asc' }, 'devices' => @devices}
     respond_to do |format|
       format.html
       format.json { render :json => json_response, :status => :ok }
