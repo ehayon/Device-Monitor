@@ -27,7 +27,7 @@ $(document).ready ->
             $.ajax
                 type: 'get'
                 url: '/devices'
-                data: {'sort':{'by':'id','dir':sort_dir}, 'search': keyword}
+                data: {'sort':{'by':'id','dir':sort_dir},'search': keyword}
                 dataType: 'json'
                 success: (json, status, response) ->    
                     $('#devices tr:gt(0)').each ->
