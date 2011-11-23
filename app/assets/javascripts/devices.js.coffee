@@ -18,6 +18,7 @@ $(document).ready ->
             reload()
         $('#search_message').delegate('#remove', 'click', ->
             $('#search_message').fadeOut('fast')
+            $('#search_field').val("")
             keyword = ''
             reload()
         )
