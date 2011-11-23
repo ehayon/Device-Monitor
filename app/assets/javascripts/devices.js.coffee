@@ -23,7 +23,7 @@ $(document).ready ->
             keyword = ''
             reload()
         )
-        $('#folder_sort').delegate('#folder_view', 'click', =>
+        $('#folder_sort').delegate('#folder_view', 'change', =>
             folder = $('#folder_view').val()
             reload()
         )

@@ -18,12 +18,15 @@ class Device < ActiveRecord::Base
     self.last_checked ||= 5.minutes.ago
   end
   
+  # Called from daemon - returns devices that need to be monitored now
   def self.to_be_checked
     Device.where("last_checked <= ?", 5.minutes.ago)
   end
-    
+  
+  # Filter the results based on search terms
   def self.search(keyword, sort, folder)
     keyword ||= ''
+    folder ||= ''
     results = []
     if folder == ''
       devices = Device.order("#{sort[:by]} #{sort[:dir]}")
@@ -40,6 +43,7 @@ class Device < ActiveRecord::Base
   end
   
   private
+  # Levenshtein distance of two strings 
   def self.get_distance(s1 ,s2)
       m = Hash.new
       (s1.length + 1).times do |i|
