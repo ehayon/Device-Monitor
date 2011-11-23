@@ -27,7 +27,8 @@ class Device < ActiveRecord::Base
     results = []
     devices = Device.order("#{sort[:by]} #{sort[:dir]}")
     devices.each do |device|
-      if device.name.downcase =~ /.*#{keyword.downcase}.*/ or keyword.downcase =~ /.*#{device.name.downcase}.*/ or get_distance(keyword, device.name) <= 4
+      if device.name.downcase =~ /.*#{keyword.downcase}.*/ or keyword.downcase =~ /.*#{device.name.downcase}.*/ or get_distance(keyword, device.name) <= 4 or
+         device.ip.downcase =~ /.*#{keyword.downcase}.*/ or keyword.downcase =~ /.*#{device.ip.downcase}.*/
           results << device
       end
     end
