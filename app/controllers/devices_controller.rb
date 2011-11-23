@@ -40,6 +40,7 @@ class DevicesController < ApplicationController
   end
   def update
     @device = Device.find(params[:id])
+    @device.last_checked = 5.minutes.ago
     respond_to do |format|
       if @device.update_attributes(params[:device])
         format.html { redirect_to @device, :notice => "Device updated!" }

@@ -4,9 +4,7 @@ class Device < ActiveRecord::Base
 
   validates_presence_of :name, :description, :ip, :port, :folder_id
   validates_numericality_of :port, :greater_than => 0
-  
-  before_save :on_edit
-  
+    
   after_initialize :init
 
   def init 
