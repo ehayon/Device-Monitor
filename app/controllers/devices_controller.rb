@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
   def index
     params[:sort] ||= {'by'=>'id', 'dir'=>'asc'}
     params[:search] ||= ""
-    @devices = Device.where('name LIKE ?', '%'+params[:search]+'%').order("#{params[:sort][:by]} #{params[:sort][:dir]}")
+    @devices = Device.search(params[:search], params[:sort])
     json_response = { 'sort' => { 'by' => 'id', 'dir' => 'asc' }, 'devices' => @devices}
     respond_to do |format|
       format.html

@@ -12,12 +12,12 @@ $(document).ready ->
             keyword = $('#search_field').val()
             $('#search_message').html("Showing results for \"" + keyword + "\"").append('<span id="remove">X</span>')
             if keyword == '' 
-                $('#search #search_message').hide()
+                $('#search #search_message').fadeOut('fast')
             else
-                $('#search #search_message').show()
+                $('#search #search_message').fadeIn('fast')
             reload()
         $('#search_message').delegate('#remove', 'click', ->
-            $('#search_message').hide()
+            $('#search_message').fadeOut('fast')
             keyword = ''
             reload()
         )
