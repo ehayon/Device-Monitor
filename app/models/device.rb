@@ -22,10 +22,14 @@ class Device < ActiveRecord::Base
     Device.where("last_checked <= ?", 5.minutes.ago)
   end
     
-  def self.search(keyword, sort)
+  def self.search(keyword, sort, folder)
     keyword ||= ''
     results = []
-    devices = Device.order("#{sort[:by]} #{sort[:dir]}")
+    if folder == ''
+      devices = Device.order("#{sort[:by]} #{sort[:dir]}")
+    else
+      devices = Device.where(:folder_id => folder).order("#{sort[:by]} #{sort[:dir]}")
+    end
     devices.each do |device|
       if device.name.downcase =~ /.*#{keyword.downcase}.*/ or keyword.downcase =~ /.*#{device.name.downcase}.*/ or get_distance(keyword, device.name) <= 4 or
          device.ip.downcase =~ /.*#{keyword.downcase}.*/ or keyword.downcase =~ /.*#{device.ip.downcase}.*/

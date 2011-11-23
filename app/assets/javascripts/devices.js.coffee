@@ -4,6 +4,7 @@ $(document).ready ->
         sort_by = 'id'
         sort_dir = 'ASC'
         keyword = ''
+        folder = ''
         $('#sort').change ->
             sort_by = 'id'
             sort_dir = $(this).val()
@@ -22,12 +23,16 @@ $(document).ready ->
             keyword = ''
             reload()
         )
+        $('#folder_sort').delegate('#folder_view', 'click', =>
+            folder = $('#folder_view').val()
+            reload()
+        )
         reload = ->
             update_elements = ["name", "ip", "port", "last_state", "last_checked"]
             $.ajax
                 type: 'get'
                 url: '/devices'
-                data: {'sort':{'by':'id','dir':sort_dir},'search': keyword}
+                data: {'sort':{'by':'id','dir':sort_dir},'search': keyword,'folder':folder}
                 dataType: 'json'
                 success: (json, status, response) ->    
                     $('#devices tr:gt(0)').each ->

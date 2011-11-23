@@ -22,8 +22,5 @@
     </tr>
   <% end %>
 </table>
-<select id="sort">
-  <option value="ASC">Ascending</option>
-  <option value="DESC">Descending</option>
-</select>
+<span id="folder_sort">View by folder: <%= select("folder", "id", options_from_collection_for_select(@folders, 'id', 'name'), {:include_blank => true}, :id => 'folder_view') %></span>
 <span id="device_page"></span>

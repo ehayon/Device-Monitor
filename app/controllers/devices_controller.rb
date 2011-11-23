@@ -1,8 +1,9 @@
 class DevicesController < ApplicationController
   def index
+    @folders = Folder.all
     params[:sort] ||= {'by'=>'id', 'dir'=>'asc'}
     params[:search] ||= ""
-    @devices = Device.search(params[:search], params[:sort])
+    @devices = Device.search(params[:search], params[:sort], params[:folder])
     json_response = { 'sort' => { 'by' => 'id', 'dir' => 'asc' }, 'devices' => @devices}
     respond_to do |format|
       format.html
