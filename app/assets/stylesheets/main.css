@@ -110,3 +110,6 @@ table#devices {
   background-color: rgba(255,0,0,.4);
   cursor: pointer;
 }
+#folder_sort {
+  float: right;
+}

@@ -1,7 +1,9 @@
 <h1>Devices</h1><br />
 <div id="search">
   Search: <input type="text" name="search_field" id="search_field" />
-  <span id="search_message"><span id="remove"></span>X</span>
+  <span id="search_message"></span>
+  <span id="folder_sort">View by folder: <%= select("folder", "id", options_from_collection_for_select(@folders, 'id', 'name'), {:include_blank => true}, :id => 'folder_view') %></span>
+
 </div>
 <table id='devices'>
   <tr>
@@ -22,5 +24,4 @@
     </tr>
   <% end %>
 </table>
-<span id="folder_sort">View by folder: <%= select("folder", "id", options_from_collection_for_select(@folders, 'id', 'name'), {:include_blank => true}, :id => 'folder_view') %></span>
 <span id="device_page"></span>
