@@ -5,6 +5,8 @@ A lightweight Ruby on Rails web service used for monitoring internet connected (
 
 Utilizes curb (libcurl) curl implementation
 
+***
+
 ####To run the monitoring daemon:
 <code>ehayon$ ./lib/daemons/check_pulse_ctl start</code> (from the project root)
 
