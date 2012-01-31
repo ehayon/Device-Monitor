@@ -10,3 +10,8 @@ Utilizes curb (libcurl) curl implementation
 ####To run the monitoring daemon:
 <code>ehayon$ ./lib/daemons/check_pulse_ctl start</code> (from the project root)
 
+***
+TODO: 
+
+**Implement notification system (email and SMS text messaging)
+
